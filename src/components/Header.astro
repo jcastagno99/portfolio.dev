@@ -1,0 +1,198 @@
+---
+const navItems = [
+  {
+    title: "About me",
+    label: "about-me",
+    url: "/#about-me",
+  },
+  {
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
+  },
+  {
+    title: "Studies",
+    label: "studies",
+    url: "/#studies",
+  },
+  {
+    title: "Stack",
+    label: "stack",
+    url: "/#stack",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "mailto:juan-castagno@hotmail.com",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+]
+
+import Menu from "../icons/Menu.astro"
+import Close from "../icons/Close.astro"
+import Home from "../icons/Home.astro"
+import LinkedIn from "../icons/LinkedIn.astro"
+import GitHub from "../icons/GitHub.astro"
+import Mail from "../icons/Mail.astro"
+import Resume from "../icons/Resume.astro"
+import SocialPill from "./SocialPill.astro"
+---
+
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="main-navbar flex py-2 px-3 text-lg font-medium rounded-full text-gray-200 justify-center items-center">
+    <a href="#" class="float-left hover:scale-110">
+      <Home class="size-7"/>
+    </a>
+    <button class="ml-auto hidden hover:transform hover:scale-110">
+      <Menu class="size-7"/>
+    </button>
+    <div class="main-links rounded flex flex-row items-center">
+          {
+            navItems.map((link) => (
+            <a
+              class="relative inline px-3 py-1.5 transition transform hover:scale-110 whitespace-nowrap"
+              aria-label={link.label}
+              href={link.url}>
+              {link.title}
+            </a>
+            
+          ))
+          }
+    </div>
+  </nav>
+</header>
+    <nav class="secondary-navbar mr-auto z-10 text-lg font-medium bg-[#181824]/90 inset-0 transform: none;">
+  <button class="hover:transform hover:scale-110 flex flex-col items-center mx-auto my-4">
+    <Close class="size-7"/>
+  </button>
+  <div class="secondary-links flex flex-col items-center">
+        {
+          navItems.filter(link => link.label !== "contact").map((link) => (
+          <a
+            class="relative inline px-3 py-1.5 transition transform hover:scale-110 whitespace-nowrap"
+            aria-label={link.label}
+            href={link.url}>
+            {link.title}
+          </a>
+          
+        ))
+        }
+      <div class="social-conteiner gap-4 pt-6 flex items-center min-w-[110px] mx-auto delay-100">
+        <SocialPill href="https://www.linkedin.com/in/juan-manuel-castagno-3717a01b8/">
+          <LinkedIn class="size-5" />
+        </SocialPill>
+        <SocialPill href="https://github.com/jcastagno99">
+          <GitHub class="size-6" />
+        </SocialPill>
+        <SocialPill href="mailto:juan-castagno@hotmail.com">
+          <Mail class="size-4 " />
+        </SocialPill>
+        <SocialPill href="">
+          <Resume class="size-6" />
+        </SocialPill>
+      </div>
+  </div>
+  <div>
+
+  </div>
+</nav>
+
+<style>
+  .main-navbar{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 9999px;
+  }
+
+  .secondary-navbar{
+    position: fixed;
+    left: -300px;
+    height: 100%;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px 0 rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.5s;
+  }
+
+  .main-navbar{
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  .social-conteiner{
+    animation: opacity-in 1s;
+    animation-delay: 0,7s;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur bg-white/5 ring-white/10 rounded-full;
+    }
+  }
+
+  @media screen and (max-width: 610px){
+
+    .main-navbar{
+      width: 100%;
+      margin-inline: 10px;
+      height: 56px;
+    }
+
+    .main-links{
+      display: none;
+    }
+
+    button{
+      display: block;
+    }
+
+  }
+
+</style>
+
+<script>
+  const mainNavbar = document.querySelector('.main-navbar')
+  const secondaryNavbar = document.querySelector('.secondary-navbar')
+  const menuButton = document.querySelector('.main-navbar button')
+  const closeButton = document.querySelector('.secondary-navbar button')
+  const anchors = document.querySelectorAll('.secondary-navbar a')
+  const main = document.querySelector('main')
+
+  menuButton?.addEventListener('click', () => {
+    open_navbar(mainNavbar! as HTMLElement, secondaryNavbar! as HTMLElement, main! as HTMLElement)
+  })
+
+  closeButton?.addEventListener('click', () => {
+    close_navbar(mainNavbar! as HTMLElement, secondaryNavbar! as HTMLElement, main! as HTMLElement)
+  })
+
+  anchors.forEach(a => {
+    a.addEventListener('click', () => {
+      close_navbar(mainNavbar! as HTMLElement, secondaryNavbar! as HTMLElement, main! as HTMLElement)
+    })
+  });
+
+  main?.addEventListener('click', () => {
+    close_navbar(mainNavbar! as HTMLElement, secondaryNavbar! as HTMLElement, main! as HTMLElement)
+  })
+
+  function open_navbar(mainNavbar: HTMLElement, secondaryNavbar: HTMLElement, main: HTMLElement): void {
+    mainNavbar?.classList.add('hidden')
+    secondaryNavbar.style.left = "0px";
+    main?.classList.add("brightness-50")
+  }
+
+  function close_navbar(mainNavbar: HTMLElement, secondaryNavbar: HTMLElement, main: HTMLElement): void {
+    mainNavbar?.classList.remove('hidden')
+    secondaryNavbar.style.left = "-300px";
+    main?.classList.remove("brightness-50")
+  }
+</script>

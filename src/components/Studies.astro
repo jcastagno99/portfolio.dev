@@ -1,0 +1,28 @@
+---
+import StudiesItem from './StudiesItem.astro'
+
+const EDUCATION = [
+{
+    title: 'Information Systems Engineering',
+    subtitle: 'National Technological University (UTN)',
+    date: '2018 - Present',
+    description: 'I am currently in 4th year with an average of 8.08 with 26/43 subjects passed.',
+  },
+  {
+    title: 'Bachelor degree in Economics and Administration',
+    subtitle: 'Instituto San José de Salto',
+    date: '2013-2017',
+    description: 'I graduated with a 9.26 of general average. I formed part of the escort of the Argentine flag '
+  }
+]
+---
+
+<ol class='relative border-s border-gray-700 ml-3'>
+    {
+    EDUCATION.map(education => 
+        <li class='mb-10 ms-4'>
+            <StudiesItem {...education} />
+        </li>
+    )
+    }
+</ol>

@@ -1,0 +1,52 @@
+---
+// import ExperienceItem from './ExperienceItem.astro'
+
+// const EXPERIENCE = [
+// {
+//     title: '',
+//     description: '',
+//     date: '',
+//     link: ''
+//   }
+// ]
+
+import ContactIcon from "../icons/ContactIcon.astro";
+---
+
+<ol class="relative border-s border-gray-700 ml-3">                  
+    <li class="mb-4 ms-4">
+        <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+        <time class="mb-1 text-sm font-semibold leading-none text-gray-200/90">Somewhere in the future</time>
+        <h3 class="mb-1 text-lg font-semibold text-blue-300/90 mt-2">Want to work with me?</h3>
+        <p class="mb-4 text-base font-normal text-gray-200 text-pretty">I'm always looking for new opportunities to learn and grow. If you think I could be a good fit for your team, don't hesitate to
+            <a target="_blank" class="mb-4 group transition-all items-baseline w-fit text-underline-animation" href="mailto:juan-castagno@hotmail.com?subject=Work offer">
+                <span class="nav mr-1">contact me
+                    <span class="overflow-hidden w-0 group-hover:w-[14px] inline-block -mb-0.5 transition-all">
+                        <ContactIcon />
+                    </span>
+                </span>
+
+            </a>
+        </p>
+        
+</ol>
+
+<!-- <ol class='relative border-s border-gray-700 ml-3'>
+    {
+    EXPERIENCE.map(experience => 
+        <li class='mb-10 ms-4'>
+            <ExperienceItem {...experience} />
+        </li>
+    )
+    }
+</ol> -->
+
+
+
+
+<style>
+    .nav {
+        @apply relative ml-1 text-blue-300/90 font-semibold
+        hover:text-sky-500
+    }
+</style>
