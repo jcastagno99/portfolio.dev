@@ -21,7 +21,7 @@ import Projects from '../components/Projects.astro'
 	title="Portfolio de Juan Manuel Castagno - Junior Full Stack Developer"
 	description="Junior Full Stack Developer ready for new challenges">
 
-	<main class="px-4">
+	<main class="px-4 items-center mx-auto">
 		<SectionContainer id="about-me" class="pt-44 pb-14">
 			<div>
 				<img 
@@ -58,13 +58,13 @@ import Projects from '../components/Projects.astro'
 						<GitHub class="size-4 lg:size-6 " />
 						GitHub
 					</SocialPill>
-					<SocialPill href="mailto:juan-castagno@hotmail.com">
-						<Mail class="size-4 lg:size-6 " />
-						juan-castagno@hotmail.com
-					</SocialPill>
 					<SocialPill href="">
 						<Resume class="size-6" />
 						Resume
+					</SocialPill>
+										<SocialPill href="mailto:juan-castagno@hotmail.com">
+						<Mail class="size-4 lg:size-6 " />
+						juan-castagno@hotmail.com
 					</SocialPill>
 				</nav>
 			</div>
@@ -111,7 +111,7 @@ import Projects from '../components/Projects.astro'
 		height: 150px;
 	}
 
-	@media screen and (max-width: 520px){
+	@media screen and (max-width: 700px){
 		.tittle{
 			display: block;
 			padding-bottom: 10px;
@@ -122,4 +122,5 @@ import Projects from '../components/Projects.astro'
 			margin-top: 1rem;
 		}
 	}
+
 </style>
