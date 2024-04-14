@@ -21,20 +21,19 @@ const navItems = [
     url: "/#stack",
   },
   {
-    title: "Contact",
-    label: "contact",
-    url: "mailto:juan-castagno@hotmail.com",
-  },
-  {
     title: "Projects",
     label: "projects",
     url: "/#projects",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "mailto:juan-castagno@hotmail.com",
   },
 ]
 
 import Menu from "../icons/Menu.astro"
 import Close from "../icons/Close.astro"
-import Home from "../icons/Home.astro"
 import LinkedIn from "../icons/LinkedIn.astro"
 import GitHub from "../icons/GitHub.astro"
 import Mail from "../icons/Mail.astro"
@@ -45,9 +44,6 @@ import SocialPill from "./SocialPill.astro"
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
   <nav class="main-navbar flex py-2 px-3 text-lg font-medium rounded-full text-gray-200 justify-center items-center">
-    <a href="#" class="float-left hover:scale-110">
-      <Home class="size-7"/>
-    </a>
     <button class="ml-auto hidden hover:transform hover:scale-110">
       <Menu class="size-7"/>
     </button>
@@ -55,7 +51,7 @@ import SocialPill from "./SocialPill.astro"
           {
             navItems.map((link) => (
             <a
-              class="relative inline px-3 py-1.5 hover:scale-110"
+              class="relative inline px-2 py-1.5 hover:scale-110 hover:text-amber-400 transition-transform duration-300 ease-in-out whitespace-nowrap"
               aria-label={link.label}
               href={link.url}>
               {link.title}
@@ -66,15 +62,15 @@ import SocialPill from "./SocialPill.astro"
     </div>
   </nav>
 </header>
-    <nav class="secondary-navbar mr-auto z-10 text-lg font-medium bg-[#181824]/90 inset-0 transform: none;">
-  <button class="hover:transform hover:scale-110 flex flex-col items-center mx-auto my-4">
+    <nav class="secondary-navbar mr-auto z-10 text-lg font-medium bg-[#1E1909]/90 inset-0 transform: none;">
+  <button class="hover:transform hover:scale-110 hover:fill-current transition-transform duration-300 ease-in-out flex flex-col items-center mx-auto my-4">
     <Close class="size-7"/>
   </button>
   <div class="secondary-links flex flex-col items-center">
         {
           navItems.filter(link => link.label !== "contact").map((link) => (
           <a
-            class="relative inline px-3 py-1.5 transition transform hover:scale-110 whitespace-nowrap"
+            class="relative inline px-3 py-1.5 hover:text-amber-400 transition-transform duration-300 ease-in-out hover:scale-110 whitespace-nowrap"
             aria-label={link.label}
             href={link.url}>
             {link.title}
@@ -138,7 +134,7 @@ import SocialPill from "./SocialPill.astro"
     }
   }
 
-  @media screen and (max-width: 610px){
+  @media screen and (max-width: 570px){
 
     .main-navbar{
       width: 100%;

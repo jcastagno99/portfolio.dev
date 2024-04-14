@@ -18,39 +18,47 @@ import Projects from '../components/Projects.astro'
 ---
 
 <Layout
-	title="Juan Manuel Castagno - Junior Full Stack Developer"
+	title="Juan Manuel Castagno - Junior Developer and Programmer"
 	description="Junior Full Stack Developer ready for new challenges">
 
 	<main class="px-4 items-center mx-auto">
-		<SectionContainer id="about-me" class="pt-44 pb-14">
-			<div>
+		<SectionContainer id="about-me" class="pt-44 pb-10">
+			<div class="flex justify-center mb-10">
 				<img 
-				class="profile-picture size-18 rounded-full border-2 border-gray-300 mb-4 hover:scale-110 transition-transform duration-300 ease-in-out"
-				src="../../profile.jpg" 
+				class="size-40 lg:size-60 md:size-60 rounded-full border-2 border-gray-300 mb-4"
+				src="../../profile.webp" 
 				title="Juan Manuel Castagno"/>
 			</div>
 
 			<div>
-				<h1 class="tittle text-white lg:text-5xl text-3xl font-bold flex flex-row gap-x-4 pb-6">Hey, I'm Juan Manuel 
-					<a href="https://www.linkedin.com/in/juan-manuel-castagno-3717a01b8/" 
-					target="_blank"
-					rel="noopener"
-					class="badge flex justify-center items-center">
-						<Badge>Looking for a job</Badge>
-					</a>
+				<h1 class="tittle text-white lg:text-5xl md:text-4xl text-3xl font-bold flex justify-center items-center flex-wrap pb-2 ml-20">Hey, I'm 
+					<span class="name text-amber-400 ml-3">Juan Manuel</span>
+					<div class="badge-container flex justify-center items-center pl-4 mt-1">
+						<a href="https://www.linkedin.com/in/castagnojm/" 
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center">
+							<Badge>OPEN TO WORK</Badge>
+						</a>
+					</div>
 				</h1>
-				<h2 class="text-xl lg:text-2xl text-balance max-w-[700px]">
-					<span>Junior Full Stack Developer</span>
-					<span class="opacity-80"> allways ready to learn new things. Student of </span>
-					<span class="text-blue-300/90">Information Systems Engineering</span>   
-					<span class="opacity-80">at the</span>
-					<span> National Technological University</span>
-					<span class="opacity-80">, living in</span>
-					<span class="text-blue-300/90">Argentina.</span>
+				<h2 class="text-2xl lg:text-3xl justify-center text-center mb-3 italic flex">
+					Junior Full Stack Developer
 				</h2>
-
-				<nav class="flex gap-4 pt-6 flex-wrap">
-					<SocialPill href="https://www.linkedin.com/in/juan-manuel-castagno-3717a01b8/">
+				<div class="justify-center text-center">
+					<p class="text-xl lg:text-2xl text-pretty max-w-[700px] font-light">
+						Enthusiastic of <strong class="text-amber-300">technology</strong>, 
+						<strong class="text-amber-300">software development</strong> and 
+						<strong class="text-amber-300">cybersecurity</strong>, I consider myself 
+						<strong class="text-[#ED9476]">responsible</strong>, <strong class="text-[#ED9476]">proactive</strong> 
+						with the ability to <strong class="text-[#EB8B6E]">work in a team</strong> but
+						also to face <strong class="text-[#ED9476]">individal challenges</strong>, 
+						currently living in <strong class="text-cyan-300/80"> Buenos Aires</strong>, <strong class="text-cyan-300/80">Argentina</strong>.
+						<img class="inline-block size-6 mb-1" src="/ar.webp" alt="Argentina"></img>
+					</p>
+				</div>
+				<nav class="social-media flex gap-4 pt-6 flex-wrap items-center justify-center">
+					<SocialPill href="https://www.linkedin.com/in/castagnojm/">
 						<LinkedIn class="size-4 lg:size-6 " />
 						LinkedIn
 					</SocialPill>
@@ -59,43 +67,43 @@ import Projects from '../components/Projects.astro'
 						GitHub
 					</SocialPill>
 					<SocialPill href="/JUAN-MANUEL-CASTAGNO-CV.pdf" target="_blank">
-						<Resume class="size-6" />
+						<Resume class="size-5 lg:size-6" />
 						Resume
 					</SocialPill>
 					<SocialPill href="mailto:juan-castagno@hotmail.com">
-						<Mail class="size-4 lg:size-6 " />
+						<Mail class="size-4 lg:size-6" />
 						juan-castagno@hotmail.com
 					</SocialPill>
 				</nav>
 			</div>
 		</SectionContainer>
 
-		<SectionContainer id="experience">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="experience" class="border-amber-300 border-2 my-8 rounded-3xl">
+			<h2 class="sm:text-3xl text-2xl font-semibold mb-6 my-10 inline-flex gap-x-3 items-center">
 				<ExperienceIcon class="size-7" />
-				Work Experience
+					Work Experience
 			</h2>
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id="studies">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="studies" class="border-amber-300 border-2 my-8 rounded-3xl">
+			<h2 class="sm:text-3xl text-2xl font-semibold mb-6 my-10 inline-flex gap-x-3 items-center">
 				<StudiesIcon class="size-7" />
-				Studies
+					Studies
 			</h2>
 			<Studies />
 		</SectionContainer>
 
-		<SectionContainer id="stack">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="stack" class="border-amber-300 border-2 my-8 rounded-3xl">
+			<h2 class="sm:text-3xl text-2xl font-semibold mb-2 my-10 inline-flex gap-x-3 items-center">
 				<StackIcon class="size-7" />
 				Technology Stack
 			</h2>
 			<Stack />
 		</SectionContainer>
 
-		<SectionContainer id="projects">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="projects" class="border-amber-300 border-2 my-8 rounded-3xl">
+			<h2 class="sm:text-3xl text-2xl font-semibold mb-6 inline-flex gap-x-3 items-center">
 				<ProjectsIcon class="size-7" />
 				Projects
 			</h2>
@@ -106,20 +114,22 @@ import Projects from '../components/Projects.astro'
 
 <style>
 
-	.profile-picture{
-		width: 150px;
-		height: 150px;
-	}
-
-	@media screen and (max-width: 700px){
+	@media screen and (max-width: 840px){
 		.tittle{
-			display: block;
+			display: flex;
 			padding-bottom: 10px;
+			margin-left: 0%;
 		}
 
-		.badge{
-			width: fit-content;
-			margin-top: 1rem;
+		.badge-container{
+			margin-top: 10px;
+		}
+	}
+
+	@media screen and (max-width: 580px){
+		.social-media{
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
